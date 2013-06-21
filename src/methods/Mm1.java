@@ -6,7 +6,7 @@ public class Mm1 extends AbstractMethod {
 		setLambda(lambda);
 		setMu(mu);
 		setN(n);
-		setRo(ro);
+		setRho(ro);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class Mm1 extends AbstractMethod {
 		if(getMu()!=0&&getLambda()!=0){
 			return (getMu()-getLambda())/getMu();
 		}
-		return 1-getRo();
+		return 1-getRho();
 	}
 
 	@Override
@@ -45,15 +45,15 @@ public class Mm1 extends AbstractMethod {
 			part2=(getMu()-getLambda())/getMu();
 			return part1*part2;
 		}
-		return ((float) Math.pow(getRo(), getN()))*(1-getRo());
+		return ((float) Math.pow(getRho(), getN()))*(1-getRho());
 	}
 
 	@Override
-	public float getRo() {
+	public float getRho() {
 		if(getMu()!=0&&getLambda()!=0){
 			return getLambda()/getMu();
 		}
-		return this.ro;
+		return this.rho;
 	}
 
 }

@@ -3,7 +3,7 @@ package methods;
 public abstract class AbstractMethod {
 	float lambda;
 	float mu;
-	float ro;
+	float rho;
 	float n;
 	float k;
 	
@@ -13,7 +13,7 @@ public abstract class AbstractMethod {
 	public abstract float getLq();
 	public abstract float getPo();
 	public abstract float getPn();
-	public abstract float getRo();
+	public abstract float getRho();
 	
 	public AbstractMethod(){}
 	public float getLambda(){return this.lambda;}
@@ -21,7 +21,7 @@ public abstract class AbstractMethod {
 	public float getN(){return this.n;}
 	public float getK(){return this.k;}
 	public void setLambda(float l){this.lambda=l;}
-	public void setRo(float ro){this.ro=ro;}
+	public void setRho(float ro){this.rho=rho;}
 	public void setMu(float m){this.mu=m;}
 	public void setN(float n){this.n=n;}
 	public void setK(float n){this.k=n;}

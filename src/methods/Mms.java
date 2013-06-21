@@ -3,11 +3,11 @@ package methods;
 public class Mms extends AbstractMethod{
 	float s;
 	
-	public void setValues(float lambda, float mu, float n, float s){
+	public void setValues(float lambda, float mu, float n, float s, float rho){
 		setLambda(lambda);
 		setMu(mu);
 		setN(n);
-		setRo(ro);
+		setRho(rho);
 		setS(s);
 	}
 
@@ -49,7 +49,7 @@ public class Mms extends AbstractMethod{
 	}
 
 	@Override
-	public float getRo() {
+	public float getRho() {
 		return 0;
 	}
 

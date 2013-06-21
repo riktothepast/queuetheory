@@ -45,8 +45,8 @@ public class Meks extends AbstractMethod{
 	@Override
 	public float getLq() {
 		float up,down,lq;
-		up = ((this.getLambda()*this.getLambda())/(this.getK()*this.getMu()*this.getMu()))+(this.getRo()*this.getRo());
-		down = 2 * (1 - this.getRo());
+		up = ((this.getLambda()*this.getLambda())/(this.getK()*this.getMu()*this.getMu()))+(this.getRho()*this.getRho());
+		down = 2 * (1 - this.getRho());
 		lq = up / down;
 		return lq;
 	}
@@ -54,9 +54,9 @@ public class Meks extends AbstractMethod{
 	public float getLostP(){
 		float up,down,lostp;
 		down = 0;
-		up = this.getRo() / this.factorial(this.getN());
+		up = this.getRho() / this.factorial(this.getN());
 		for(int i=0; i <= this.getN(); i++){
-			down += ((float) Math.pow(this.getRo(), i))/ this.factorial(i);
+			down += ((float) Math.pow(this.getRho(), i))/ this.factorial(i);
 		}
 		lostp = up / down;
 		return lostp;
@@ -75,7 +75,7 @@ public class Meks extends AbstractMethod{
 	}
 
 	@Override
-	public float getRo() {
+	public float getRho() {
 		float rho;
 		rho = this.getLambda()/this.getMu();
 		return rho;

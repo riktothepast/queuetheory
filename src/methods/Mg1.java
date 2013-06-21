@@ -28,17 +28,17 @@ public class Mg1 extends AbstractMethod{
 
 	@Override
 	public float getL() {
-		return getRo() + getLq();
+		return getRho() + getLq();
 	}
 
 	@Override
 	public float getLq() {
-		return (getLambda()*getLambda()*getVariance()+getRo()*getRo())/(2*(1- getRo()));
+		return (getLambda()*getLambda()*getVariance()+getRho()*getRho())/(2*(1- getRho()));
 	}
 
 	@Override
 	public float getPo() {
-		return 1-getRo();
+		return 1-getRho();
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class Mg1 extends AbstractMethod{
 	}
 
 	@Override
-	public float getRo() {
+	public float getRho() {
 		return getLambda()/getMu();
 	}
 

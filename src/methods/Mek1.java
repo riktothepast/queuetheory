@@ -37,8 +37,8 @@ public class Mek1 extends AbstractMethod{
 	@Override
 	public float getLq() {
 		float up,down,lq;
-		up = (this.getRo()*this.getRo())*(this.getK()+1);
-		down = 2 * this.getK() * (1 - this.ro);
+		up = (this.getRho()*this.getRho())*(this.getK()+1);
+		down = 2 * this.getK() * (1 - getRho());
 		lq = up / down;
 		return lq;
 	}
@@ -46,7 +46,7 @@ public class Mek1 extends AbstractMethod{
 	@Override
 	public float getPo() {
 		float po;
-		po = 1 - this.getRo();
+		po = 1 - this.getRho();
 		return po;
 	}
 
@@ -57,7 +57,7 @@ public class Mek1 extends AbstractMethod{
 	}
 
 	@Override
-	public float getRo() {
+	public float getRho() {
 		float rho;
 		rho = this.getLambda()/this.getMu();
 		return rho;
