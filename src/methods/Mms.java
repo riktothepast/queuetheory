@@ -3,38 +3,47 @@ package methods;
 public class Mms extends AbstractMethod{
 	float s;
 	
-	public void setValues(float lambda, float mu, float n, float s, float rho){
+	public void setValues(float lambda, float mu, float n, float s){
 		setLambda(lambda);
 		setMu(mu);
 		setN(n);
-		setRho(rho);
 		setS(s);
 	}
 
 	@Override
 	public float getW() {
-		return 0;
+		return getL()/getLambda();
 	}
 
 	@Override
 	public float getWq() {
-		return 0;
+		return getLq()/getLambda();
 	}
 
-	@Override
+	@Override		
+
 	public float getL() {
-		return 0;
+		return (getLq()+(getLambda()/getMu()));
 	}
 
 	@Override
 	public float getLq() {
-		return 0;
+		float upper,lower;
+		upper=(float) Math.pow((getLambda()/getMu()), (getS()+1))*getPo();
+		lower=(float) (factorial(getS()-1)*Math.pow((getS()-(getLambda()/getMu())),2));
+		return upper/lower;
 	}
 
 	@Override
 	public float getPo() {
-		
-		return 0;
+		float sumValue=0;
+		for(int x=0; x<getS()-1;x++){
+			sumValue+=Math.pow(getLambda()/getMu(), getN());
+		}
+		sumValue=sumValue*(1/factorial(getN()));
+		float spart;
+		spart=(float) ((1/factorial(getS()))*Math.pow(getLambda()/getMu(), getS()))*(1/(1-(getLambda()/(getS()/getMu()))));
+		return 1/(sumValue+spart);
 	}
 
 	@Override
@@ -59,5 +68,10 @@ public class Mms extends AbstractMethod{
 	
 	public float getS(){
 		return this.s;
+	}
+	
+	public float Prob(float t){
+		Math.exp(-getMu()*t);
+		return 0;
 	}
 }

@@ -21,7 +21,7 @@ public abstract class AbstractMethod {
 	public float getN(){return this.n;}
 	public float getK(){return this.k;}
 	public void setLambda(float l){this.lambda=l;}
-	public void setRho(float ro){this.rho=rho;}
+	public void setRho(float ro){this.rho=ro;}
 	public void setMu(float m){this.mu=m;}
 	public void setN(float n){this.n=n;}
 	public void setK(float n){this.k=n;}
