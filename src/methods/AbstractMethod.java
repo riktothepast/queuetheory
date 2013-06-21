@@ -14,7 +14,6 @@ public abstract class AbstractMethod {
 	public abstract float getPo();
 	public abstract float getPn();
 	public abstract float getRo();
-
 	
 	public AbstractMethod(){}
 	public float getLambda(){return this.lambda;}
@@ -26,4 +25,9 @@ public abstract class AbstractMethod {
 	public void setMu(float m){this.mu=m;}
 	public void setN(float n){this.n=n;}
 	public void setK(float n){this.k=n;}
+	
+	public float factorial(float num){
+	      if(num==0) return 1;   
+	      else return num*factorial(num-1);  
+	} 
 }
