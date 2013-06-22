@@ -4,6 +4,12 @@ public class Mek1 extends AbstractMethod{
 
 	private float k;
 	
+	public void setValues(float k, float lambda, float mu){
+		setK(k);
+		setLambda(lambda);
+		setMu(mu);
+	}
+	
 	public void setK(float k){
 		this.k = k;
 	}
