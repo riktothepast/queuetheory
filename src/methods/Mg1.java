@@ -3,6 +3,12 @@ package methods;
 public class Mg1 extends AbstractMethod{
 
 	private float variance;
+
+    public void setValues(float lambda, float mu, float s){
+        setLambda(lambda);
+        setMu(mu);
+        setVariance(s);
+    }
 	
 	public float getVariance(){
 		return this.variance;

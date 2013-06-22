@@ -2,8 +2,12 @@ package methods;
 
 public class Meks extends AbstractMethod{
 
-	private float k,n;
-	
+    public void setValues(float lambda, float mu, float n){
+        setLambda(lambda);
+        setMu(mu);
+        setK(n);
+    }
+
 	public void setK(float k){
 		this.k = k;
 	}
