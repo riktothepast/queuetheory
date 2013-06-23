@@ -2,11 +2,10 @@ package methods;
 
 public class Mm1 extends AbstractMethod {
 
-	public void setValues(float lambda, float mu, float n,float ro){
+	public void setValues(float lambda, float mu, float n){
 		setLambda(lambda);
 		setMu(mu);
 		setN(n);
-		setRho(ro);
 	}
 
 	@Override

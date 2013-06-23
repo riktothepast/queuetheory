@@ -66,7 +66,7 @@ public class GuiMethod extends javax.swing.JDialog {
                 break;
             case 1:
                 Mm1 mm1=new Mm1();
-                mm1.setValues(Float.valueOf(a0TextField.getText()),Float.valueOf(a0TextField1.getText()),Float.valueOf(a0TextField2.getText()),Float.valueOf(a0TextField3.getText()));
+                mm1.setValues(Float.valueOf(a0TextField.getText()),Float.valueOf(a0TextField1.getText()),Float.valueOf(a0TextField2.getText()));
                 result+="Po= "+mm1.getPo()+"\n";
                 result+="Pn= "+mm1.getPn()+"\n";
                 result+="W= "+mm1.getW()+"\n";
