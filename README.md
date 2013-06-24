@@ -1,10 +1,14 @@
 ### Queue Theory
 
-* Methods to resolver queue theory problems
-* M/M/1
-* M/M/s
+Methods to resolve queue theory problems
+
+* M/M/1   
+* M/M/S   
 * M/G/1
-* etc...
+* M/D/1 
+* M/D/S
+* M/E/K/1
+* M/E/K/S
  
 ------
 
