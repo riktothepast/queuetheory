@@ -8,9 +8,11 @@ public class Mmsk extends AbstractMethod{
         return this.lambda*(1-this.getPk());
     }
 
-    public void setValues(float lambda, float mu){
+    public void setValues(float lambda, float mu, float s, float k){
         this.setLambda(lambda);
         this.setMu(mu);
+        this.setS(s);
+        this.setK(k);
     }
 
     public void setS(float s){

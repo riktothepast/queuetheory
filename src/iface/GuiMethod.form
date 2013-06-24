@@ -135,6 +135,7 @@
                     <item value="M/D/S"/>
                     <item value="M/E/K/1"/>
                     <item value="M/E/K/S"/>
+                    <item value="M/M/S/K"/>
                   </model>
                 </properties>
               </component>

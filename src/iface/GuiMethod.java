@@ -51,6 +51,7 @@ public class GuiMethod extends javax.swing.JDialog {
         M/D/S   = 4
         M/E/K/1 = 5
         M/E/K/S = 6
+        M/M/S/K = 7
         */
         String result="";
         switch(comboBox1.getSelectedIndex()){
@@ -129,6 +130,20 @@ public class GuiMethod extends javax.swing.JDialog {
                 result+="Lq= "+meks.getLq()+"\n";
                 result+="Rho= "+meks.getRho()+"\n";
                 break;
+            case 7:
+                Mmsk mmsk = new Mmsk();
+                mmsk.setValues(Float.valueOf(a0TextField.getText()),Float.valueOf(a0TextField1.getText()),Float.valueOf(a0TextField2.getText()),Float.valueOf(a0TextField4.getText()));
+                result+="Po= "+mmsk.getPo()+"\n";
+                result+="Pn= "+mmsk.getPn()+"\n";
+                result+="Pk= "+mmsk.getPk()+"\n";
+                result+="W= "+mmsk.getW()+"\n";
+                result+="Wq= "+mmsk.getWq()+"\n";
+                result+="L= "+mmsk.getL()+"\n";
+                result+="Lq= "+mmsk.getLq()+"\n";
+                result+="Rho= "+mmsk.getRho()+"\n";
+                result+="ELambda= "+mmsk.getElamda()+"\n";
+                break;
+
         }
         textArea1.setText(result);
     }
