@@ -48,18 +48,25 @@ public class Mms extends AbstractMethod{
 
 	@Override
 	public float getPn() {
-		if(getN()>getS()){
-			return (float) (Math.pow(getLambda(),getN())/(Math.pow(getMu(),getN()*factorial(getS())*Math.pow(getS(), (getN()-getS())))))*getPo();		
-		}
-		if(getN()<=getS()){
-			return (float) ((Math.pow(getLambda(), getN()))/(Math.pow(getMu(), getN())*factorial(getN())))*getPo();
-		}
-		return 0;
+        if(getN()>getS()){
+            float upper, lower;
+            upper= (float) Math.pow(getLambda(),getN());
+            lower= (float) ((float) Math.pow(getMu(),getN())*factorial(getS())*Math.pow(getS(), (getN()-getS())));
+            return (upper/lower)*getPo();
+        }else
+        if(getN()<=getS()){
+            float upper, lower;
+            upper= (float) Math.pow(getLambda(), getN());
+            lower= (float) (Math.pow(getMu(), getN())*factorial(getN()));
+            return (upper/lower)*getPo();
+        }else{
+            return 0;
+        }
 	}
 
 	@Override
 	public float getRho() {
-		return 0;
+		return getLambda()/getMu();
 	}
 
 	public void setS(float s){
@@ -71,7 +78,10 @@ public class Mms extends AbstractMethod{
 	}
 	
 	public float Prob(float t){
-		Math.exp(-getMu()*t);
-		return 0;
+		float ex= (float) Math.exp(-getMu()*t);
+        float part1,part2;
+        part1= (float) (1+(getPo()*Math.pow(getLambda() / getMu(), getS()))/(factorial(getS())*(1-(getLambda()/getMu()))));
+        part2= (float) ((1-Math.exp(-getMu()*t*(getS()-1-(getLambda()/getMu()))))/(getS()-1-(getLambda()/getMu())));
+		return ex*(part1*part2);
 	}
 }

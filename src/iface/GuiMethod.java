@@ -11,11 +11,11 @@ public class GuiMethod extends javax.swing.JDialog {
     private JComboBox comboBox1;
     private JTextField a0TextField1;
     private JTextField a0TextField2;
-    private JTextField a0TextField3;
     private JTextField a0TextField4;
     private JTextField a0TextField5;
     private JTextArea textArea1;
     private JTextField a0TextField6;
+    private JTextField a0TextField7;
 
     public GuiMethod() {
         setContentPane(contentPane);
@@ -55,16 +55,6 @@ public class GuiMethod extends javax.swing.JDialog {
         String result="";
         switch(comboBox1.getSelectedIndex()){
             case 0:
-                Mms mms=new Mms();
-                mms.setValues(Float.valueOf(a0TextField.getText()),Float.valueOf(a0TextField1.getText()),Float.valueOf(a0TextField2.getText()),Float.valueOf(a0TextField3.getText()));
-                result+="Po= "+mms.getPo()+"\n";
-                result+="Pn= "+mms.getPn()+"\n";
-                result+="W= "+mms.getW()+"\n";
-                result+="Wq= "+mms.getWq()+"\n";
-                result+="L= "+mms.getL()+"\n";
-                result+="Lq= "+mms.getLq()+"\n";
-                break;
-            case 1:
                 Mm1 mm1=new Mm1();
                 mm1.setValues(Float.valueOf(a0TextField.getText()),Float.valueOf(a0TextField1.getText()),Float.valueOf(a0TextField2.getText()));
                 result+="Po= "+mm1.getPo()+"\n";
@@ -73,6 +63,21 @@ public class GuiMethod extends javax.swing.JDialog {
                 result+="Wq= "+mm1.getWq()+"\n";
                 result+="L= "+mm1.getL()+"\n";
                 result+="Lq= "+mm1.getLq()+"\n";
+                result+="Rho= "+mm1.getRho()+"\n";
+                mm1.setT(Float.valueOf(a0TextField5.getText()));
+                result+="P(W>t)= "+mm1.getPwt()+"\n";
+                break;
+            case 1:
+                Mms mms=new Mms();
+                mms.setValues(Float.valueOf(a0TextField.getText()),Float.valueOf(a0TextField1.getText()),Float.valueOf(a0TextField2.getText()),Float.valueOf(a0TextField7.getText()));
+                result+="Po= "+mms.getPo()+"\n";
+                result+="Pn= "+mms.getPn()+"\n";
+                result+="W= "+mms.getW()+"\n";
+                result+="Wq= "+mms.getWq()+"\n";
+                result+="L= "+mms.getL()+"\n";
+                result+="Lq= "+mms.getLq()+"\n";
+                result+="Rho= "+mms.getRho()+"\n";
+                result+="P(W>t)= "+mms.Prob(Float.valueOf(a0TextField5.getText()))+"\n";
                 break;
             case 2:
                 Mg1 mg1=new Mg1();
@@ -83,6 +88,7 @@ public class GuiMethod extends javax.swing.JDialog {
                 result+="L= "+mg1.getL()+"\n";
                 result+="Lq= "+mg1.getLq()+"\n";
                 result+="Media Servicio= "+mg1.getMeanService()+"\n";
+                result+="Rho= "+mg1.getRho()+"\n";
                 break;
             case 3:
                 Md1 md1=new Md1();
@@ -92,6 +98,7 @@ public class GuiMethod extends javax.swing.JDialog {
                 result+="Wq= "+md1.getWq()+"\n";
                 result+="L= "+md1.getL()+"\n";
                 result+="Lq= "+md1.getLq()+"\n";
+                result+="Rho= "+md1.getRho()+"\n";
                 break;
             case 4:
                 Mds mds=new Mds();
@@ -101,6 +108,7 @@ public class GuiMethod extends javax.swing.JDialog {
                 result+="Wq= "+mds.getWq()+"\n";
                 result+="L= "+mds.getL()+"\n";
                 result+="Lq= "+mds.getLq()+"\n";
+                result+="Rho= "+mds.getRho()+"\n";
                 break;
             case 5:
                 Mek1 mek1=new Mek1();
@@ -110,6 +118,7 @@ public class GuiMethod extends javax.swing.JDialog {
                 result+="Wq= "+mek1.getWq()+"\n";
                 result+="L= "+mek1.getL()+"\n";
                 result+="Lq= "+mek1.getLq()+"\n";
+                result+="Rho= "+mek1.getRho()+"\n";
                 break;
             case 6:
                 Meks meks = new Meks();
@@ -118,6 +127,7 @@ public class GuiMethod extends javax.swing.JDialog {
                 result+="Wq= "+meks.getWq()+"\n";
                 result+="L= "+meks.getL()+"\n";
                 result+="Lq= "+meks.getLq()+"\n";
+                result+="Rho= "+meks.getRho()+"\n";
                 break;
         }
         textArea1.setText(result);

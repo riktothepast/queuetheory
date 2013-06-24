@@ -1,7 +1,7 @@
 package methods;
 
 public class Mm1 extends AbstractMethod {
-
+    float t;
 	public void setValues(float lambda, float mu, float n){
 		setLambda(lambda);
 		setMu(mu);
@@ -54,5 +54,19 @@ public class Mm1 extends AbstractMethod {
 		}
 		return this.rho;
 	}
+
+    public void setT(float te){
+        this.t=te;
+    }
+
+    public float getT(){
+        return this.t;
+    }
+
+    public float getPwt(){
+        float result;
+        result= (float) Math.exp(-getMu()*(1-(getLambda()/getMu())*getT()));
+        return result;
+    }
 
 }
