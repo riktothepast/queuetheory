@@ -132,7 +132,7 @@ public class GuiMethod extends javax.swing.JDialog {
                 break;
             case 7:
                 Mmsk mmsk = new Mmsk();
-                mmsk.setValues(Float.valueOf(a0TextField.getText()),Float.valueOf(a0TextField1.getText()),Float.valueOf(a0TextField2.getText()),Float.valueOf(a0TextField4.getText()));
+                mmsk.setValues(Float.valueOf(a0TextField.getText()),Float.valueOf(a0TextField1.getText()),Float.valueOf(a0TextField7.getText()),Float.valueOf(a0TextField2.getText()),Float.valueOf(a0TextField4.getText()));
                 result+="Po= "+mmsk.getPo()+"\n";
                 result+="Pn= "+mmsk.getPn()+"\n";
                 result+="Pk= "+mmsk.getPk()+"\n";
